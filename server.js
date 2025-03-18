@@ -3,10 +3,10 @@ const mongoose = require("mongoose");
 const ShortUrl = require("./models/shortUrl");
 const shortid = require("shortid");
 
-mongoose.connect(process.env.MONGO_URL)
+mongoose
+  .connect(process.env.MONGO_URL)
   .then(() => console.log("MongoDB connected"))
-  .catch(err => console.log("MongoDB connection error:", err));
-
+  .catch((err) => console.log("MongoDB connection error:", err));
 
 const app = express();
 
@@ -33,11 +33,6 @@ app.get("/:shortUrl", async (req, res) => {
   res.redirect(shortUrl.full);
 });
 
-app.listen(process.env.PORT || 5000, () => {
-  console.log("Server running on http://localhost:5000");
-});
-
-
-
+app.listen(5000);
 
 // MONGO_URL= mongodb+srv://naavyjain174:uei8yoP3pjaYIIvU@cluster0.knijk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
