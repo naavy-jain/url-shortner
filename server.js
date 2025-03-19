@@ -34,6 +34,10 @@ app.get("/:shortUrl", async (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 
 
 // MONGO_URL= mongodb+srv://naavyjain174:uei8yoP3pjaYIIvU@cluster0.knijk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
